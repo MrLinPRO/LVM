@@ -1,0 +1,63 @@
+[root@lvm /]# history
+    1  grub2-mkconfig -o /boot/grub2/grub.cfg
+    2  cd /boot ; for i in `ls initramfs-*img`; do dracut -v $i `echo $i|sed "s/initramfs-//g; \
+    3  > s/.img//g"` --force; done
+    4  yum install nano
+    5  nano /boot/grub2/grub.cfg
+    6  nano /boot/grub2/grub.cfg
+    7  nano /boot/grub2/grub.cfg
+    8  lsblk
+    9  lvremove /dev/VolGroup00/LogVol00
+   10  cd
+   11  cd
+   12  lvremove /dev/VolGroup00/LogVol00
+   13  exit
+   14  grub2-mkconfig -o /boot/grub2/grub.cfg
+   15  cd /boot ; for i in `ls initramfs-*img`;  do dracut -v $i `echo $i|sed "s/initramfs-//g; \
+   16  > s/.img//g"` --force; done
+   17  pvcreate /dev/sdc /dev/sdd
+   18  vgcreate vg_var /dev/sdc /dev/sdd
+   19  lvcreate -L 950M -m1 -n lv_var vg_var
+   20  mkfs.ext4 /dev/vg_var/lv_var
+   21  mount /dev/vg_var/lv_var /mnt
+   22  cp -aR /var/* /mnt/
+   23  mkdir /tmp/oldvar && mv /var/* /tmp/oldvar
+   24  umount /mnt
+   25  mount /dev/vg_var/lv_var /var
+   26  echo "`blkid | grep var: | awk '{print $2}'` \
+   27   /var ext4 defaults 0 0" >> /etc/fstab
+   28  shutdown -r
+   29  cd
+   30  shutdown -r
+   31  exit
+   32   lvremove /dev/vg_root/lv_root
+   33  vgremove /dev/vg_root
+   34  pvremove /dev/sdb
+   35  lvcreate -n LogVol_Home -L 2G /dev/VolGroup00
+   36  mkfs.xfs /dev/VolGroup00/LogVol_Home
+   37  mount /dev/VolGroup00/LogVol_Home /mnt/
+   38  cp -aR /home/* /mnt/
+   39  rm -rf /home/*
+   40  umount /mnt
+   41  mount /dev/VolGroup00/LogVol_Home /home/
+   42  echo "`blkid | grep Home | awk '{print $2}'` \
+   43   /home xfs defaults 0 0" >> /etc/fstab
+   44  pwd
+   45  touch /home/file{1..20}
+   46  lvcreate -L 100MB -s -n home_snap  dev/VolGroup00/LogVol_Home
+   47  lvcreate -L 100MB -s -n home_snap  /dev/VolGroup00/LogVol_Home
+   48  rm -f /home/file{11..20}
+   49  cd
+   50  pwd
+   51  umount /home
+   52  lvconvert --merge /dev/VolGroup00/home_snap
+   53  mount /home
+   54  ls -al /home
+   55  ls -lh
+   56  cd /home
+   57  ls -lh
+   58  pwd
+   59  cd /vagrant
+   60  ls -lh
+   61  exit
+   62  history
