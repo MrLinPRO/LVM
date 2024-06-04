@@ -3,7 +3,7 @@
 ## Выделить том под /home. - screenshoot 3.
 ## Выделить том под /var - сделать в mirror. - screenshoots 2.
 ## /home - сделать том для снапшотов. screenshoot 4.
-## Прописать монтирование в fstab. screenshoot 4.
+## Прописать монтирование в fstab. screenshoot 3.
 ## Работа со снапшотами: screenshoot 4.
 ### сгенерить файлы в /home/; screenshoot 4.
 ### снять снапшот; screenshoot 4.
